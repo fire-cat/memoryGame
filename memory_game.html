@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <title>Canvas Memory Game</title>
+    <link href="css/game.css" type="text/css" rel="stylesheet"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <img id = "cover" src="assets/cover.jpg" style="display: none">
+    <h1>Memory Game</h1>
+    <h1 id = "win" class="win nowin">You have won!</h1>
+
+
+    <input id = 'rows' type="number" min="2" step = "2" value="6"/>
+    <input id = 'colls' type="number" min="2" value="4"/>
+    <br>
+    <br>
+    <input type="button" value = "Start" onclick="start()"/>
+    <br>
+
+
+    <div id="field">
+        <table id = "game-grid" ></table>
+    </div>
+    <div id="game-statistic">
+        <div id="statistic-left">Clicks: <span id="no-of-clicks" class="bold-text">0</span></div>
+        <div id="statistic-right">Correct Guess: <span id="correct-guess" class="bold-text">0</span></div>
+        <div class="clear"></div>
+    </div>
+    <div id="game-message">
+        <div class="congrats-message">You have won!</div>
+        <button id="btnRestart" type="button">Restart</button>
+    </div>
+    <script src="js/flip.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
+
