@@ -12,10 +12,17 @@ let clicks = 0;
 const images = new Map();
 
 function start() {
-    document.getElementById('win').classList.toggle('nowin');
+    document.getElementById('win').classList.add('nowin');
     gameGrid.innerHTML = '';
     rows = document.getElementById('rows').value;
     colls = document.getElementById('colls').value;
+
+    clicks = 0;
+    correctGuess = 0;
+
+    document.getElementById('no-of-clicks').textContent = clicks;
+    document.getElementById('correct-guess').textContent = correctGuess;
+
     generateCards();
     createGameGrid();
 }
@@ -58,7 +65,6 @@ function drawCardBackground(canvas, image) {
 function handleClick(event) {
     document.getElementById('no-of-clicks').textContent = ++clicks;
     if (currentCanvas && event.target.id  === currentCanvas.id) {
-        flip(  cover, images[currentCanvas.id].image, "close", currentCanvas);
         return;
     }
     if (currentCanvas && images[event.target.id].imageID === images[currentCanvas.id].imageID) {
